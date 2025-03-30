@@ -11,13 +11,30 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Kuban Fair App',
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Kuban Fair App'),
-        ),
-        body: const Center(
-          child: Text('Привет, Кубанская ярмарка!'),
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Color(0xFF174A43)),
+        useMaterial3: true,
+      ),
+      home: const HomeScreen(),
+    );
+  }
+}
+
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Кубанская Ярмарка'),
+      ),
+      body: const Center(
+        child: Text(
+          'Добро пожаловать!',
+          style: TextStyle(fontSize: 24),
         ),
       ),
     );
