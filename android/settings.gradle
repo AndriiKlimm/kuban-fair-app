@@ -1,0 +1,3 @@
+
+rootProject.name = 'kuban_fair_app'
+include ':app'
