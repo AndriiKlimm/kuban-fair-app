@@ -1,11 +1,7 @@
-
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'screens/home_screen.dart';
 
-Future<void> main() async {
+void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(); // Заглушка
   runApp(const MyApp());
 }
 
@@ -15,12 +11,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Кубанская Ярмарка',
-      theme: ThemeData(
-        primarySwatch: Colors.teal,
-        scaffoldBackgroundColor: Colors.white,
+      title: 'Kuban Fair App',
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Kuban Fair App'),
+        ),
+        body: const Center(
+          child: Text('Привет, Кубанская ярмарка!'),
+        ),
       ),
-      home: const HomeScreen(),
     );
   }
 }
